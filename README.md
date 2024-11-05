@@ -1,4 +1,4 @@
-## miRNA_Analysis
+## Exploring Transcriptomic Alterations in Human Respiratory Cells Post SARS-CoV-2 Infection : A Differential Gene Expression and Enrichment Study
 
 ### Objective 
 The primary goal of this project is to analyze transcriptomic changes in human respiratory cells following SARS-CoV-2 infection. This involves identifying differentially expressed genes (DEGs) and performing gene ontology (GO) and pathway enrichment analyses to understand the biological processes and pathways affected by the virus at different time points.
