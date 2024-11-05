@@ -32,6 +32,11 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install("DESeq2")
 ```
+4. GO Annotation packages in R
+```R
+BiocManager::install("clusterProfiler")
+BiocManager::install("org.Hs.eg.db"
+```
 ### Reference Genome and Annotation file
 1. Download the Human reference genome file.
 ```bash
@@ -60,10 +65,10 @@ The scripts required for each analysis step can be found in the ```Scripts``` fo
 
 ```sam_to_bam.sh``` - Converts .sam files to .bam format for efficient storage.
 
-```featureCounts.sh``` - Quantifies gene expression by counting features in .bam files using the .gtf annotation file with Subread.
+```featureCounts.sh``` - Quantifies gene expression by counting features in .bam files using the .gtf annotation file with Subread and the output is saved to .csv format.
 
 ### Differential gene expression analysis.
-A Detailed R script ```DESQ2.R``` for performing differential gene expression analysis is provided in the repository. This script utilizes DESeq2 to identify differentially expressed genes between conditions.
+A Detailed R script ```DESQ2.R``` for performing differential gene expression analysis is provided in the repository. This script utilizes DESeq2 to identify differentially expressed genes between conditions. The initial feature_counts.csv file is preprocessed using pandas in Python, producing gene_counts_only.csv as the input for the DESQ2. The raw files, processed file and Python script used are present in ```DESQ2``` directory in the repository. 
 
 ### Output files
 The output files generated at each step serve as inputs for subsequent analyses. The final results, along with a comprehensive summary of the workflow and findings, are compiled in the ```Report.pdf``` document located in the repository.
