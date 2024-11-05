@@ -40,4 +40,28 @@ Note: These are single ended reads
 ```bash
 fastq-dump --split-files
 ```
+### Reference Genome and Annotation file
+1. Download the reference genome file 
+```bash
+wget ftp://ftp.ensembl.org/pub/release-109/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+gunzip Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+```
+2. Download the gene annotation file 
+```bash
+wget ftp://ftp.ensembl.org/pub/release-109/gtf/homo_sapiens/Homo_sapiens.GRCh38.109.gtf.gz
+gunzip Homo_sapiens.GRCh38.109.gtf.gz 
+``` 
+### Analysis
+The next scripts of the script can be acessed under ```Scripts``` folder present in the repository. Make sure you change your paths of the directories and the environment names according to your system paths and modify the slurm details to submit the job according to your slurm account details.
+```fastq-dump.sh``` To convert the .sra files to fastq files
+```fastqc.sh```  Quality Control for the fastq files to know the quality of the fastq files.
+```cutadapt.sh``` After analysing the fastq report it shows that it contains the adapter content, it has illuminated universal adapter content ```AGATCGGAAGAG``` so used the cutadapt was used to remove the adapters.
+```mapping.sh``` Mapping the reads to the refernce genome
+```sam_to_bam.sh``` Convert the .same file format to .bam format for the further analysis.
+```featureCounts.sh``` Using subread to do the feature counts using the gtf file.
+### Differential gene expression analysis.
+Detailed R script for the differential gene expression analysis is presnt in the repository
+
+### Output files
+The output files for each step are used for the analysis of the next steps. Results from all the steps are summarized and the detailed report ```Report.pdf``` in the repository.
 
