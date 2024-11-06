@@ -15,7 +15,7 @@ Data for this project is available through the National Center for Biotechnology
 6. Hisat2
 7. Sam-tools
 8. Subread
-9. DESQ2
+9. DESeq2
 
 ### Installation
 1. Create a conda environment for the project
