@@ -1,7 +1,7 @@
 ## Exploring Transcriptomic Alterations in Human Respiratory Cells Post SARS-CoV-2 Infection : A Differential Gene Expression and Enrichment Study
 
 ### Objective 
-The primary goal of this project is to analyze transcriptomic changes in human respiratory cells following SARS-CoV-2 infection. This involves identifying differentially expressed genes (DEGs) and performing gene ontology (GO) and pathway enrichment analyses to understand the biological processes and pathways affected by the virus at different time points.
+The primary goal of this project was to investigate transcriptomic changes in human respiratory cells induced by SARS-CoV-2 infection. The analysis aimed to identify differentially expressed genes (DEGs) across two conditions: infected versus control samples and across two time points (24 hours and 72 hours post-infection). Comprehensive gene ontology (GO) enrichment and pathway analyses were conducted to uncover the biological processes, molecular functions, and cellular components impacted by the viral infection.
 
 ### Data Source
 Data for this project is available through the National Center for Biotechnology Information (NCBI) under the accession BioProjectID: PRJNA901149.
@@ -15,7 +15,7 @@ Data for this project is available through the National Center for Biotechnology
 6. Hisat2
 7. Sam-tools
 8. Subread
-9. DESeq2
+9. DESeq2 (R)
 
 ### Installation
 1. Create a conda environment for the project
@@ -38,17 +38,17 @@ BiocManager::install("clusterProfiler")
 BiocManager::install("org.Hs.eg.db"
 ```
 ### Reference Genome and Annotation file
-1. Download the Human reference genome file.
+1. Download the Human reference genome file (vGRCh38).
 ```bash
 wget ftp://ftp.ensembl.org/pub/release-109/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 gunzip Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 ```
-2. Download the Human gene annotation file. 
+2. Download the Human gene annotation file (vGRCh38). 
 ```bash
 wget ftp://ftp.ensembl.org/pub/release-109/gtf/homo_sapiens/Homo_sapiens.GRCh38.109.gtf.gz
 gunzip Homo_sapiens.GRCh38.109.gtf.gz 
 ``` 
-### Download the data and preprocess
+### Download the data using the SRA Toolkit
 ```bash
 prefetch SRP407642
 ```
