@@ -1,7 +1,7 @@
-## Exploring Transcriptomic Alterations in Human Respiratory Cells Post SARS-CoV-2 Infection : A Differential Gene Expression and Enrichment Study
+## Transcriptomic Analysis of SARS-CoV-2-Infected Human Respiratory Cells
 
 ### Objective 
-The primary goal of this project was to investigate transcriptomic changes in human respiratory cells induced by SARS-CoV-2 infection. The analysis aimed to identify differentially expressed genes (DEGs) across two conditions: infected versus control samples and across two time points (24 hours and 72 hours post-infection). Comprehensive gene ontology (GO) enrichment and pathway analyses were conducted to uncover the biological processes, molecular functions, and cellular components impacted by the viral infection.
+The primary goal of this project is to investigate transcriptomic changes in human respiratory cells induced by SARS-CoV-2 infection. The analysis aims to identify differentially expressed genes (DEGs) across two conditions: infected versus control samples and across two time points (24 hours and 72 hours post-infection). Comprehensive gene ontology (GO) enrichment and pathway analyses are performed to uncover the biological processes, molecular functions, and cellular components impacted by the viral infection.
 
 ### Data Source
 Data for this project is available through the National Center for Biotechnology Information (NCBI) under the accession BioProjectID: PRJNA901149.
@@ -21,12 +21,13 @@ Data for this project is available through the National Center for Biotechnology
 1. Create a conda environment for the project
 ```bash
 conda create -n rna_env
+conda activate rna_env
 ```
-2. Install the tools using the following commands in the created environments.
+2. Install the tools using the following command in the created environment.
 ```bash
 conda install -c bioconda sra-tools fastqc cutadapt hisat2 samtools subread
 ```
-3. For DESQ2 in R
+3. For DESeq2 in R
 ```R
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
@@ -59,7 +60,7 @@ The scripts required for each analysis step can be found in the ```Scripts``` fo
 
 ```fastqc.sh``` - Performs Quality Control checks on the .fastq files.
 
-```cutadapt.sh``` - Trims adapter sequences from reads. The FastQC report identified Illumina universal adapter content AGATCGGAAGAG.
+```cutadapt.sh``` - Trims adapter sequences from reads.
 
 ```mapping.sh``` - Maps the reads to the refernce genome using HISAT2 for alignment.
 
@@ -68,7 +69,7 @@ The scripts required for each analysis step can be found in the ```Scripts``` fo
 ```featureCounts.sh``` - Quantifies gene expression by counting features in .bam files using the .gtf annotation file with Subread and the output is saved to .csv format.
 
 ### Differential gene expression analysis.
-A Detailed R script ```DESQ2.R``` for performing differential gene expression analysis is provided in the repository. This script utilizes DESeq2 to identify differentially expressed genes between conditions. The initial feature_counts.csv file is preprocessed using pandas in Python, producing gene_counts_only.csv as the input for the DESQ2. The raw files, processed file and Python script used are present in ```DESQ2``` directory in the repository. 
+A Detailed R script ```DESeq2.R``` for performing differential gene expression analysis is provided in the repository. This script utilizes DESeq2 to identify differentially expressed genes between conditions. The initial feature_counts.csv file is preprocessed using pandas in Python, producing gene_counts_only.csv as the input for the DESeq2. The raw files, processed file and Python script used are present in ```DESeq2``` directory in the repository. 
 
 ### Output files
 The output files generated at each step serve as inputs for subsequent analyses. The final results, along with a comprehensive summary of the workflow and findings, are compiled in the ```Report.pdf``` document located in the repository.
