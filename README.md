@@ -23,16 +23,9 @@ conda create -n gatk
 ```
 Install the dependencies using the following command.
 ```
-conda install -c bioconda sra-tools
-conda install -c bioconda fastqc
-conda install -c bioconda trim-galore
-conda install -c bioconda bwa
-conda install -c bioconda samtools
-conda install -c bioconda gatk
-conda install -c bioconda vcftools
-conda install -c bioconda picard
+conda install -c bioconda sra-tools fastqc trim-galore bwa samtools gatk vcftools picard
 ```
 ### Input files 
-1. SRA IDs: The sequencing data for three samples were downloaded using the SRA Toolkit.
+1. SRA IDs: 
 2. Reference Genome: Mus_musculus.GRCm39
 3. Annotation File: Mus_musculus.GRCm39.109.gff3
