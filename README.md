@@ -1,7 +1,7 @@
-# Integrative Analysis of Gene Co-Expression in PM2.5-Exposed Bronchial Epithelial Cells
+# Differential Gene Expression analysis in PM2.5-Exposed Bronchial Epithelial Cells
 
 ### Objective
-To uncover the molecular mechanisms underlying PM2.5 exposure in bronchial epithelial cells by integrating transcriptomic and epigenomic data. This study employs WGCNA to identify gene co-expression modules and hub genes while linking these findings to DNA methylation changes to reveal regulatory pathways and key biological processes disrupted by environmental pollutants.
+To uncover the molecular mechanisms underlying PM2.5 exposure in bronchial epithelial cells by analysing transcriptomic data. This study emplyos differnetial gene expression analysis to identify gene co-expression modules and hub genes while linking these findings to DNA methylation changes to reveal regulatory pathways and key biological processes disrupted by environmental pollutants.
 
 ### Tools and Dependencies
 1. SRA-Toolkit
