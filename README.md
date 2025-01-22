@@ -1,20 +1,17 @@
-# Differential Gene Expression analysis in PM2.5-Exposed Bronchial Epithelial Cells
+# Assessing the Impact of Different Tools on Transcriptomic Analysis Methods
 
 ### Objective
-To uncover the molecular mechanisms underlying PM2.5 exposure in bronchial epithelial cells by analyzing transcriptomic data. This study employs differential gene expression analysis to identify key genes, regulatory pathways, and biological processes disrupted by environmental pollutants.
+This project compares transcriptomic workflows with varierty of tools at each step under various computational constraints, using PM_2.5 exposed bronchial epithelial cell data. The goal is to see whether workflow selection and tool slection significantly influences the final results or not, compared to the original study.
 
 ### Tools and Dependencies
 1. SRA-Toolkit
 2. Fastqc
 3. Prinseq
-4. Trim Galore
-5. HISAT2
-6. Sam-tools
-7. Subread
-8. DESeq2
-9. Cluster Profiler
-10. R and Bio conductor Packages
-11. GO
+4. Salmon
+5. Kallisto
+6. DESeq2
+7. EdgeR
+8. R and Bio conductor Packages
 
 ### Installation
 
@@ -25,7 +22,7 @@ conda activate rna-seq
 ```
 Install the dependencies using bioconda
 ```
-conda install -c bioconda sra-tools fastqc trim-galore prinseq hisat2 samtools subread
+conda install -c bioconda sra-tools fastqc prinseq salmon kallisto
 ```
 For R and Bioconductor packages, install them directly in R:
 ```
@@ -36,8 +33,8 @@ BiocManager::install(c("DESeq2", "clusterProfiler", "org.Hs.eg.db", "ComplexHeat
 ```
 
 ### Input files 
-1. SRA IDs: RNA-Seq Data: SRP275647 Bisulfite - Seq Data: SRP275645
-2. Reference Genome: Homo_sapiens.GRCh38.dna.primary_assembly.fa
+1. SRA IDs: RNA-Seq Data: SRP275647
+2. Reference Transciptome: Homo_sapiens.GRCh38.dna.primary_assembly.fa
 3. Annotation File: Homo_sapiens.GRCh38.109.gtf
 
 1. Download Raw data using SRA Toolkit
