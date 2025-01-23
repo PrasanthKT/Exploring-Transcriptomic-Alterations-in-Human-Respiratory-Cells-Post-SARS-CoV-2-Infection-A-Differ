@@ -34,17 +34,16 @@ BiocManager::install(c("DESeq2", "clusterProfiler", "org.Hs.eg.db", "ComplexHeat
 
 ### Input files 
 1. SRA IDs: RNA-Seq Data: SRP275647
-2. Reference Transciptome: Homo_sapiens.GRCh38.dna.primary_assembly.fa
+2. Reference Transciptome: Homo_sapiens.GRCh38.cdna.all.fa
 3. Annotation File: Homo_sapiens.GRCh38.109.gtf
 
 1. Download Raw data using SRA Toolkit
 ```
 prefetch SRP275647
-prefetch SRP275645
 ```
-2. Human Reference Genome 
+2. Human Reference Transcriptome 
 ```
-wget ftp://ftp.ensembl.org/pub/release-109/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+wget ftp://ftp.ensembl.org/pub/release-109/fasta/homo_sapiens/cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz
 gunzip Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 ```
 3. Humman Annotation File
@@ -54,12 +53,12 @@ gunzip Homo_sapiens.GRCh38.109.gtf.gz
 ```
 ### Getting Started
 1.	Set up the Conda environment and install all dependencies.
-2.	Download the raw SRA files, reference genome, and annotation file using the commands above.
-3.	Navigate to the Scripts folder and execute the preprocessing scripts for RNA-Seq and Bisulfite-Seq data.
+2.	Download the raw SRA files, reference transcriptome, and annotation file using the commands above.
+3.	Navigate to the Scripts folder and execute scripts for RNA-Seq within the conda environment.
 4.	Use the output files from the analysis for further processing and analysis in R.
 
 ### Workflow
-The detailed workflow for the analysis is documented in the report, which is available in the repository as ```Report.pdf```. Shell scripts for each step of the workflow are organized under the ```Scripts``` folder, while R scripts and their corresponding input files are located in the ```DESeq2```folder within the repository.
+The detailed workflow for the analysis is documented in the report, which is available in the repository as ```Report.pdf```. Shell scripts for each step of the workflow are organized under the ```Scripts``` folder, while R scripts and their corresponding input files are located in the ```R_Analysis```folder within the repository.
 
 ### Results
-A comprehensive interpretation of the results is provided in the ```Report.pdf``` report. Key findings are summarized, with visualizations and pathway insights derived from the integrative analysis of transcriptomic and epigenomic data.
+A comprehensive interpretation of the results is provided in the ```Report.pdf``` report. Key findings are summarized in the rport.
