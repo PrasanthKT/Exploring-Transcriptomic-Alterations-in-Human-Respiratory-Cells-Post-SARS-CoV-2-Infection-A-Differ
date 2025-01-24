@@ -29,7 +29,7 @@ For R and Bioconductor packages, install them directly in R:
 if (!requireNamespace("BiocManager", quietly = TRUE)) {
     install.packages("BiocManager")
 }
-BiocManager::install(c("DESeq2", "clusterProfiler", "org.Hs.eg.db", "ComplexHeatmap"))
+BiocManager::install(c("DESeq2", "edgeR"))
 ```
 
 ### Input files 
